@@ -23,4 +23,4 @@ jobs:
       - name: Build application
         run: npm run build
       - name: Deploy
-        run: echo Deploing
+        uses: JamesIves/github-pages-deploy-action@v4
