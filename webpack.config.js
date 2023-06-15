@@ -11,28 +11,28 @@ const jsLoaders = () => {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
       },
     },
   ];
-  if(isDev){
+  if (isDev) {
     loaders.push('eslint-loader');
   }
   return loaders;
-}
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: ['@babel/polyfill','./index.ts'],
+  entry: ['@babel/polyfill', './index.ts'],
   output: {
     filename: filename('js'),
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   devtool: isDev ? `source-map` : false,
@@ -50,7 +50,7 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: filename('css');
+      filename: filename('css'),
     }),
     new CopyPlugin({
       patterns: [
@@ -88,9 +88,9 @@ module.exports = {
           outputPath: 'img',
           publicPath: 'img',
           emitFile: true,
-          esModule: false
+          esModule: false,
         },
       },
     ],
   },
-}
+};
