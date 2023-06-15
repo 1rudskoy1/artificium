@@ -3,7 +3,7 @@ on: [push]
 permissions:
   contents: write
 jobs:
-  build-and-deploy:
+  build:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN_KEY}}
           branch: gh-pages
-          folder: "artificium/build" # The folder the action should deploy.
+          folder: build # The folder the action should deploy.
 
