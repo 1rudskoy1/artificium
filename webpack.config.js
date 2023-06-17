@@ -23,11 +23,11 @@ const jsLoaders = () => {
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'development',
   entry: ['@babel/polyfill', './index.ts'],
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'build'),
+    assetModuleFilename: 'img/[name][ext]',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -43,7 +43,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: 'index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd,
@@ -55,14 +55,18 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.png'),
-          to: path.resolve(__dirname, 'build'),
+          from: path.resolve(__dirname, 'src/img/favicon.png'),
+          to: path.resolve(__dirname, 'build/img'),
         },
       ],
     }),
   ],
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -81,15 +85,36 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-          outputPath: 'img',
-          publicPath: 'img',
-          emitFile: true,
-          esModule: false,
-        },
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              options: {
+                outputPath: 'img', // Chage this like 'public/images' or any other relative path to the root
+              },
+              mozjpeg: {
+                progressive: true,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
+        type: 'asset/resource',
       },
     ],
   },
