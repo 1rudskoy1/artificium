@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artificium || Login</title>
+    <!-- <title>Artificium || Login</title> -->
 </head>
 
 <body class="auth">
@@ -22,8 +22,12 @@
                             <p class="offer__text">Log in to Artificium to start creating magic.</p>
                         </div>
                         <form action="" class="auth-form">
-                            <input type="email" name="email" class="auth-form__input">
-                            <input type="password" name="password" class="auth-form__input">
+                            <div class="auth-form-wrap-input">
+                                <input type="email" name="email" class="auth-form__input" placeholder="Email">
+                            </div>
+                            <div class="auth-form-wrap-input">
+                                <input type="password" name="password" class="auth-form__input" placeholder="Password">
+                            </div>
                             <div class="auth-form-check flex">
                                 <div class="checkbox flex">
                                     <input type="checkbox" class="checkbox__check">
@@ -37,14 +41,15 @@
                     </div>
                     <div class="opinion-auth">
                         <span class="opinion-auth__text">or continue with</span>
-                        <div class="opinion-auth-btns">
+                        <div class="opinion-auth-btns flex">
                             <button class="opinion-auth-btns__button">Google Account</button>
                             <button class="opinion-auth-btns__button opinion-auth-btns__button_apple">Apple
                                 Account</button>
                         </div>
                     </div>
                     <div class="dont">
-                        <p class="dont__text">Don't have an account? <span class="dont__text_sign">Sign Up</span></p>
+                        <p class="dont__text">Don't have an account? <span class="dont__text_sign text-forgot">Sign
+                                Up</span></p>
                     </div>
                 </div>
                 <div class="authorization-background">

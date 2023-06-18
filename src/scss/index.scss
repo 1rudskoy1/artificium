@@ -7,7 +7,15 @@ div {
 }
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.15px;
 }
+::placeholder {
+  color: #9B9C9E;
+  font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+}
+
 
 :root {
   --color-green: #34a853;
@@ -35,8 +43,73 @@ body {
 .opinion-auth {
   margin-left: 54px;
 }
+
+.opinion-auth {
+  &__text {
+    color: #686B6E;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    display: block;
+    position: relative;
+    text-align: center;
+
+    &::after, &::before {
+      content: "";
+      position: absolute;
+      width: 185px;
+      border: 1px solid #363A3D;
+      top: 8px;
+      left: 0;
+    }
+    &::before {
+      right: 0;
+      left: auto;
+    }
+  }
+  &-btns {
+    display: flex;
+    &__button {
+      display: block;
+      max-width: 236px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 37px 12px 70px;
+      background: #1A1D21;
+      border-radius: 12px;
+      color: #686B6E;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url(../img/Group.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 37px;
+        top: 13px;
+      }
+      &_apple::before {
+        background-image: url(../img/Vector.svg) !important;
+        top: 11px;
+        height: 23px;
+      }
+    }
+  }
+}
 .authorization-form {
-  max-width: 540px;
+  max-width: 550px;
+  margin: 25px;
+  width: 100%;
 }
 .logo {
   width: 32px;
@@ -45,6 +118,8 @@ body {
 .authorization-background {
   &__img {
     max-width: 720px;
+    width: 100%;
+    height: 99vh;
   }
 }
 
@@ -78,18 +153,39 @@ body {
   }
   
 }
+.auth-form-wrap-input {
+  position: relative;
 
+  &::after {
+    content: '';
+      background-image: url(../img/iconicon-1.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 18px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+  }
+  &:first-child::after {
+    content: '';
+      background-image: url(../img/iconicon.svg);
+  }
+}
 .auth-form {
   &__input {
     width: 100%;
-    max-width: 500px;
+    display: block;
+    max-width: 550px;
     height: 48px;
     padding: 19px 18px 19px 52px;
     box-sizing: border-box;
     margin-bottom: 24px;
     border-radius: 8px;
     background: #1a1d21;
-
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
     &:focus {
       box-shadow: 0px 0px 0px 4px rgba(132, 220, 245, 0.24);
     }
@@ -144,4 +240,14 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+.dont {
+  position: fixed;
+  bottom: 48px;
+  &__text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #686B6E;
+  }
 }
