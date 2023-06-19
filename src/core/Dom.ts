@@ -34,6 +34,9 @@ class Dom {
     getAtrr(attr:string) {
       return this.$el.getAttribute(attr);
     }
+    containClass(className:string) {
+      return this.$el.classList.contains(className);
+    }
 }
 export function $(selector:string) {
   return new Dom(selector);

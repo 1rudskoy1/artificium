@@ -25,6 +25,7 @@ export class FormAuth extends ArtComponent {
     onClick(e:any) {
       const $target = $(e.target);
       if ($target.getAtrr('data-action')) {
+        document.querySelector('.auth-form__input_error') ? document.querySelector('.auth-form__input_error').classList.remove('auth-form__input_error') : '';
         const email = (document.querySelector('input[name=email]') as HTMLInputElement).value;
         const password = (document.querySelector('input[name=password]') as HTMLInputElement).value;
         const error = validationFilds({email, password});
