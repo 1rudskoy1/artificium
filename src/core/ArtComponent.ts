@@ -3,14 +3,15 @@ export class ArtComponent extends DomListener {
   name:any;
   storeSub:any;
   unsubscribers:any;
-  constructor($root:string, options:any) {
+  constructor($root:Object, options:any) {
     super($root, options.listeners);
+    console.log(options, 'root');
     this.name = options.name || '';
     this.prepare();
   }
   prepare() {
   }
-  toHTML() {
+  toHTML(date:any = {}) {
     return '';
   }
   init() {

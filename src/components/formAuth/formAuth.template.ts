@@ -29,7 +29,7 @@ function form() {
     </div>
     <a class="text-forgot">Forgot Password?</a>
 </div>
-<button class="btn" type="submit">Log in</button>
+<button class="btn" type="button" data-action='form-button'>Log in</button>
   `;
 }
 
@@ -43,12 +43,30 @@ function opinionAuth() {
   `;
 }
 
-function authBackground() {
+function authBackground(date:number = 1) {
+  console.log(date, 'Game');
   return `
-    <img class="authorization-background__img" src="img/Illustration.png" alt="bacground">
+  <img class="authorization-background__img" src="img/${date == 1 ? 'Illustration.png' : 'Illustration-auth.jpg' }" alt="background">
+    ${date != 1 ? authBackgroundText() : ''}
   `;
 }
-export function formAuthTemplate() {
+
+function authBackgroundText() {
+  return `<div class="authorization-background-offer">
+  <h3 class="authorization-background-offer__head">
+      Artificium has been a game-changer for our content creation process.
+  </h3>
+  <h3 class="authorization-background-offer__head">
+      The AI-powered tools are incredibly user-friendly and have saved us countless hours of work.
+      Lily Patel
+  </h3>
+  <div class="authorization-background-offer-author">
+      <span class="authorization-background-offer-author__name">Lily Patel</span>
+      <span class="authorization-background-offer-author__post">CMO at Software House</span>
+  </div>
+</div>`;
+}
+export function formAuthTemplate(type:number) {
   return `
   <div class="authorization flex">
   <div class="authorization-form">
@@ -68,7 +86,7 @@ export function formAuthTemplate() {
       </div>
   </div>
   <div class="authorization-background">
-    ${authBackground()}
+    ${authBackground(type)}
   </div>
 </div>`;
 }

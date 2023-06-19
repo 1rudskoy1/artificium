@@ -31,6 +31,9 @@ class Dom {
       }
       return this;
     }
+    getAtrr(attr:string) {
+      return this.$el.getAttribute(attr);
+    }
 }
 export function $(selector:string) {
   return new Dom(selector);

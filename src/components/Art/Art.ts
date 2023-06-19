@@ -18,8 +18,6 @@ export class Art {
     return $root;
   }
   init() {
-    // this.subscriber.subscribeComponents(this.components);
-    console.log(this.components);
     this.components.forEach((component:any) => {
       component.init();
     });
