@@ -23,7 +23,7 @@ const jsLoaders = () => {
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: ['@babel/polyfill', './index.ts'],
+  entry: './index.ts',
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'build'),
@@ -55,7 +55,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/img/favicon.png'),
+          from: path.resolve(__dirname, 'src/img'),
           to: path.resolve(__dirname, 'build/img'),
         },
       ],
@@ -81,7 +81,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use: jsLoaders(),
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
