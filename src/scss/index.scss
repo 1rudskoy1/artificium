@@ -5,6 +5,9 @@
 div {
   display: block;
 }
+a {
+  cursor: pointer;
+}
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.15px;
@@ -114,6 +117,11 @@ line-height: 24px;
 .logo {
   width: 32px;
   height: 32px;
+  &-registration {
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .authorization-background {
   position: relative;
@@ -164,6 +172,10 @@ line-height: 24px;
     display: flex;
     margin-bottom: 24px;
     margin-top: 120px;
+    
+    &-reg {
+      margin-bottom: 65px;
+    }
 
     &_liner {
       margin-left: 10px;
@@ -279,10 +291,115 @@ line-height: 24px;
 .dont {
   position: fixed;
   bottom: 48px;
+  &-reg {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 680px;
+    & a {
+      color: #9B9C9E;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
   &__text {
     font-weight: 600;
     font-size: 14px;
     line-height: 24px;
     color: #686B6E;
+  }
+}
+
+.register-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-wrap-input {
+    width: 48%;
+    &:first-child::after,
+    &::after {
+      content: none;
+    }
+  }
+  &__input {
+    width: 100%;
+    color: red;
+    padding-left: 16px;
+  }
+
+  &__label {
+    color: #9B9C9E;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 16px;
+    margin-left: 3px;
+  }
+}
+.registration-form {
+  max-width: 680px;
+}
+.join-form {
+  &__input {
+    max-width: 480px;
+    text-align: right;
+    padding-left: 16px;
+    padding-right: 143px;
+    box-sizing: border-box;
+  }
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    &:first-child::after {
+      content: none;
+    }
+    &::before {
+      content: '.artificium.app';
+      position: absolute;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      right: 210px;
+      color: #686B6E;
+      top: 14px;
+    }
+  }  
+}
+
+.btn-join {
+  max-width: 172px;
+  margin-left: 24px;
+}
+
+.opinion-join {
+  width: 91%;
+  margin-left: 58px;
+  &__text {
+    margin-top: 38px;
+    margin-bottom: 38px;
+    &::after, &::before {
+      width: 46%;
+    }
+  }
+}
+
+.join-create {
+  &__button {
+    background: #1A1D21;
+    text-align: center;
+    border-radius: 12px;
+    padding: 8px 24px;
+    box-sizing: border-box;
+    width: 91%;
+    margin-left: 54px;
+    color: #9B9C9E;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
   }
 }
