@@ -440,7 +440,7 @@ line-height: 24px;
 
 .access{
   &-in-users {
-    margin-top: 100px;
+    margin-top: 160px;
     margin-bottom: -35px;
 
     &__img {
@@ -478,4 +478,118 @@ line-height: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+.menu {
+  width: 100%;
+  max-width: 312px;
+  border-radius: 10px;
+  border-radius: 20px;
+  background: var(--noble-black-800, #0D0F10);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  padding: 12px 12px;
+  margin: 12px;
+  box-sizing: border-box;
+
+  &-user {
+    display: flex;
+    flex-direction: column;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+
+      &__icon {
+
+        &_add {
+          height: 20px;
+        }
+      }
+      &__item {
+        display: flex;
+        font-weight: 600;
+        line-height: 20px;
+        font-size: 14px;
+        color: #E8E9E9;
+        padding: 14px 0 0px 0;
+        height: 48px;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        &-active {
+          border-radius: 16px;
+          border-top: 1px solid var(--glass-stroke, rgba(255, 255, 255, 0.08));
+          background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%));
+        }
+
+        &_add {
+          margin-left: 12px;
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+      &__header {
+        font-weight: 600;
+        line-height: 18px;
+        font-size: 12px;
+        color: #686B6E;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+    }
+    &-logo {
+      display: flex;
+      margin-bottom: 28px;
+      flex-direction: row;
+      gap: 20px;
+    }
+    &__img {
+      width: 48px;
+      height: 48px;
+      border-radius: 20px;
+    }
+    &-name {
+      &__head {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: white;
+      }
+      &__members {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        color: #B6F09C;
+
+      }
+    }
+  }
+}
+.user-bottom {
+  position: fixed;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 270px;
+  padding: 16px 14px;
+  box-sizing: border-box;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+.flex-wrap {
+  display: flex;
 }
