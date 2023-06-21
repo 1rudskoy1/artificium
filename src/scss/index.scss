@@ -48,6 +48,10 @@ line-height: 24px;
 }
 
 .opinion-auth {
+
+  &-access {
+    margin-left: 21px;
+  }
   &__text {
     color: #686B6E;
     font-weight: 500;
@@ -164,6 +168,9 @@ line-height: 24px;
 }
 
 .offer {
+  &-access-in {
+    margin-bottom: 64px;
+  }
   &__header {
     font-weight: 400;
     font-size: 36px;
@@ -172,7 +179,11 @@ line-height: 24px;
     display: flex;
     margin-bottom: 24px;
     margin-top: 120px;
-    
+
+    &_access {
+      margin-top: 45px;
+      display: block;
+    }
     &-reg {
       margin-bottom: 65px;
     }
@@ -401,5 +412,70 @@ line-height: 24px;
     font-size: 16px;
     line-height: 24px;
     cursor: pointer;
+
+    &-text {
+      background-color: transparent;
+    }
   }
+}
+
+.registr-access-form {
+  text-align: center;
+}
+.registr-access-wrap:first-child::after {
+  content: none;
+}
+.access-create {
+  width: 100%;
+  margin: 0 auto;
+
+  &__button {
+    max-width: 120px;
+    margin-left: 22px;
+  }
+}
+.dont-access {
+  max-width: 560px;
+}
+
+.access{
+  &-in-users {
+    margin-top: 100px;
+    margin-bottom: -35px;
+
+    &__img {
+      width: 80px;
+    }
+  }
+  &-users {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    &-count {
+      margin-left: 25px;
+    }
+
+    &-in {
+      align-items: center;
+      margin-top: 55px;
+      margin-left: 84px;
+
+      &__img {
+        width: 50px;
+      }
+    }
+    &__img {
+      display: block;
+      margin: 0;
+      max-width: 64px;
+      margin-left: -25px;
+    }
+  }
+}
+
+.form-wrap-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
