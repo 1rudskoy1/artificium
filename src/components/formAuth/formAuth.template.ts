@@ -24,7 +24,6 @@ function form() {
     <div class="auth-form-check flex">
     <div class="checkbox flex">
         <input type="checkbox" class="checkbox__check">
-
         <p class="checkbox__text">Remember me</p>
     </div>
     <a class="text-forgot">Forgot Password?</a>
