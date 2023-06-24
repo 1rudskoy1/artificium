@@ -20,10 +20,10 @@ export class FormAuth extends ArtComponent {
     }
     onInput(e:any) {
       const $target = $(e.target);
-      console.log($target);
     }
     onClick(e:any) {
       const $target = $(e.target);
+      const $check = $('.checkbox__check')
       if ($target.getAtrr('data-action')) {
         document.querySelector('.auth-form__input_error') ? document.querySelector('.auth-form__input_error').classList.remove('auth-form__input_error') : '';
         const email = (document.querySelector('input[name=email]') as HTMLInputElement).value;
@@ -31,6 +31,7 @@ export class FormAuth extends ArtComponent {
         const error = validationFilds({email, password});
         if(error.length) {
           (document.querySelector(`input[name=${error}]`) as HTMLInputElement).classList.add('auth-form__input_error');
+        } else {
         }
       }
     }
