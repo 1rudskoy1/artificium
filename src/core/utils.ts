@@ -5,12 +5,18 @@ export function capitalize(string:string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function validationFilds(data:Object) {
+export function validationFilds(data: { email: string; password: string;}) {
   let error = '';
+  const pattern = /^\S+@\S+\.\S+$/;
+
   Object.values(data).forEach((item:string, index) => {
     if (item.length < 6) {
-      error = Object.keys(data)[index];
+      return error = Object.keys(data)[index];
     }
   });
+
+  if (!data.email.match(pattern)) {
+    error = Object.keys(data)[0];
+  }
   return error;
 }

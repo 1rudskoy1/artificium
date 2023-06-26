@@ -32,6 +32,7 @@ export class FormAuth extends ArtComponent {
         if(error.length) {
           (document.querySelector(`input[name=${error}]`) as HTMLInputElement).classList.add('auth-form__input_error');
         } else {
+          console.log('red');
         }
       }
     }

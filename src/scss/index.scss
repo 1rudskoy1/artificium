@@ -802,3 +802,7 @@ line-height: 24px;
     line-height: 20px;
   }
 }
+
+.container:has(> .menu) {
+  display: flex;
+}

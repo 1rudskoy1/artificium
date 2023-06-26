@@ -5,7 +5,6 @@ export class ArtComponent extends DomListener {
   unsubscribers:any;
   constructor($root:Object, options:any) {
     super($root, options.listeners);
-    console.log(options, 'root');
     this.name = options.name || '';
     this.prepare();
   }
@@ -19,7 +18,7 @@ export class ArtComponent extends DomListener {
   }
   destroy() {
     this.removeDOMListeners();
-    this.unsubscribers.forEach((unsub:any) => unsub());
-    this.storeSub.unsubscribe();
+    // this.unsubscribers.forEach((unsub:any) => unsub());
+    // this.storeSub.unsubscribe();
   }
 }
