@@ -122,7 +122,7 @@ line-height: 24px;
   width: 32px;
   height: 32px;
   &-registration {
-    width: 110%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -637,6 +637,9 @@ line-height: 24px;
       position: relative;
       cursor: pointer;
       &-active {
+        .chat-top-item__head {
+          color: #B6F09C;
+        }
         img {
           fill: #5046e5;
         }
@@ -656,6 +659,20 @@ line-height: 24px;
         font-weight: 600;
         line-height: 20px;
         color: #9B9C9E;
+        &::after {
+          content: "";
+          background-color: #B6F09C;
+          max-width: 116px;
+          width: 0%;
+          height: 2px;
+          position: absolute;
+          top: 49px;
+          left: 9px;
+        }
+        &:hover::after {
+          width: 100%;
+          transition-duration: 0.5s;
+        }
       }
     }
     &-icon {
