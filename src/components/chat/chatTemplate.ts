@@ -1,63 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Artificium || Login</title> -->
-</head>
-
-<body>
-    <div id="app">
-
-    </div>
-    <section class="section-auth">
-        <div class="container">
-            <div class="flex-wrap">
-                <div class="menu">
-                    <div class="menu-user">
-                        <div class="menu-user-list menu-user-logo">
-                            <img class="menu-user__img" src="./img/Avatar-1.png" alt="User">
-                            <div class="menu-user-name">
-                                <h4 class="menu-user-name__head">Intellisys</h4>
-                                <div class="menu-user-name__members"><span
-                                        class="menu-user-name__members_count">12</span>
-                                    members</div>
-                            </div>
-                        </div>
-                        <div class="menu-user-list">
-                            <h3 class="menu-user-list__header">GENERAL</h3>
-                            <li class="menu-user-list__item"><img class="menu-user-list__icon chat-icon"
-                                    src="./img/search.svg" alt=""> Search</li>
-                            <li class="menu-user-list__item "><img class="menu-user-list__icon"
-                                    src="./img/credit-card.svg" alt=""> Billing</li>
-                        </div>
-                        <div class="menu-user-list">
-                            <h3 class="menu-user-list__header">PROJECTS</h3>
-                            <li class="menu-user-list__item menu-user-list__item-active"><img
-                                    class="menu-user-list__icon" src="./img/triangle.svg" alt=""> Orbital Oddysey</li>
-                            <li class="menu-user-list__item "><img class="menu-user-list__icon" src="./img/square.svg"
-                                    alt=""> Digital Product Launch</li>
-                            <li class="menu-user-list__item"><img class="menu-user-list__icon" src="./img/square-1.svg"
-                                    alt=""> Brand Refresh</li>
-                            <li class="menu-user-list__item"><img class="menu-user-list__icon" src="./img/octagon.svg"
-                                    alt=""> Social Media Strategy</li>
-                            <li class="menu-user-list__item menu-user-list__item_add"><img
-                                    class="menu-user-list__icon menu-user-list__icon_add" src="./img/plus-circle.svg"
-                                    alt=""> Add new project</li>
-                        </div>
-                    </div>
-                    <div class="user-bottom menu-user-list__item-active">
-                        <img class="user-bottom__logo" src="./img/Avatar-1.png" alt="Your User">
-                        <div class="user-bottom-text">
-                            <h5 class="user-bottom-text__name menu-user-name__head">Ryan Lee</h5>
-                            <span class="user-bottom-text__status menu-user-name__members">Premium</span>
-                        </div>
-                        <img class="user-bottom-text__setting" src="./img/cog.svg" alt="Setting ">
-                    </div>
-                </div>
-                <div class="chat">
+export function chatTemplate() {
+  return `
                     <div class="chat-top">
                         <div class="chat-top-name">
                             <h2 class="chat-top-name__header">Orbital Oddysey</h2>
@@ -197,10 +139,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-
-</html>
+  
+  `;
+}

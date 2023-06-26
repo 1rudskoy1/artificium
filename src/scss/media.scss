@@ -1,0 +1,253 @@
+@media screen and (max-width: 1230px) {
+    .chat {
+
+        &-input {
+            width: 70%;
+            right: 17px;
+        }
+    }
+  }
+
+@media screen and (max-width: 1116px) {
+    .chat {
+
+        &-input {
+            width: 67%;
+        }
+        &-options {
+            display: none;
+        }
+        &-fild {
+            margin-top: 25vh;
+        }
+    }
+    .registration{
+        &-form {
+            max-width: 560px;
+        }
+    }
+    .dont{
+            max-width: 560px;
+    }
+}
+
+@media screen and (max-width: 1016px) {
+    .chat {
+        &-input {
+            width: 65%;
+        }
+    }
+    .authorization-background-offer {
+        
+        &__head {
+            font-size: 25px;
+            line-height: 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .chat {
+        &-input {
+            width: 60%;
+
+            &__send {
+                padding-left: 30px;
+            }
+        }
+    }
+    .registration{
+        &-form {
+            max-width: 450px;
+        }
+    }
+    .dont{
+            max-width: 450px;
+    }
+    .join{
+        &-form-wrap {
+            flex-direction: column;
+
+            &::before {
+                right: 15px;
+            }
+        }
+    }
+    .btn-join {
+        max-width: inherit;
+        display: block;
+        margin-left: 0;
+    }
+    .opinion-auth-btns  {
+        gap: 20px;
+        flex-direction: column;
+    }
+    .opinion-auth-btns__button {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+    .opinion-auth__text::after, .opinion-auth__text::before {
+        width: 110px;
+    }
+    .form-wrap-buttons {
+        flex-direction: column;
+    }
+    .join-create__button-text {
+        margin-left: 0;
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .user {
+        &-bottom {
+            max-width: 181px;
+        }
+    }
+    .menu {
+        max-width: 217px;
+    }
+    .chat {
+        &-input {
+            width: 70%;
+        }
+    }
+    .dont-join {
+        max-width: 400px;
+    }
+    .authorization-background-offer {
+        left: 30px;
+
+        &__head {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+    .access-users-in {
+        flex-wrap: wrap;
+        margin-left: 32%;
+    }
+    .access-users-count {
+        margin-left: -62px;
+        margin-top: 15px;
+    }
+    .offer-access-in {
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (max-width: 792px) {
+    .user {
+        &-bottom {
+            max-width: 181px;
+        }
+    }
+    .menu {
+        max-width: 217px;
+    }
+    .chat {
+        &-input {
+            width: 67%;
+        }
+        &-top {
+            padding: 24px 12px;
+
+            &-items {
+                margin-bottom: -16px;
+            }
+        }
+    }
+    .auth{
+        &-form {
+            flex-direction: column;
+            &-wrap-input {
+                width: 100%;
+            }
+        }
+    }
+
+    .offer{
+        &__header {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 30px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+        }
+        &__text {
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+    .dont {
+        max-width: 400px;
+    }
+    .dont-join {
+        max-width: 300px;
+    }
+    .opinion-join__text::after, .opinion-join__text::before {
+        width: 33%;
+    }
+    .opinion-join__text::after {
+        left: 40px;
+    }
+    .opinion-join__text::before {
+        right: 40px;
+    }
+    .opinion-join {
+        margin-left: 45px;
+    }
+    .join-create {
+        width: 93%;
+    }
+    .opinion-auth__text::after, .opinion-auth__text::before {
+        width: 70px;
+    }
+    .text-forgot {
+        font-size: 14px;
+    }
+    .dont-access {
+        max-width: 350px;
+    }
+    .access-users-in {
+        margin-left: 30%;
+    }
+}
+@media screen and (max-width: 708px) {
+    .dont {
+        flex-direction: column;
+        position:unset;
+        margin-top: 25px;
+        margin-left: 30px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 670px) {
+    .opinion-join__text::after {
+        left: 28px;
+    }
+    .opinion-join__text::before {
+        right: 28px;
+    }
+    .access-users-in {
+        margin-left: 28%;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .dont {
+        left: 0px;
+    }
+    .access-users-in {
+        margin-left: 22%;
+    }
+}

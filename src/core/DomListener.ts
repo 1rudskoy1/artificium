@@ -6,7 +6,6 @@ export class DomListener {
   name:any;
   shorProto:any;
   constructor($root:any, listeners:any) {
-    console.log(this);
     if (!$root) {
       throw new Error(`No $root provided for DomListener!`);
     }
