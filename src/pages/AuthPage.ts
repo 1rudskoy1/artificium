@@ -21,6 +21,6 @@ export class AuthPage extends Page {
   }
   destroy() {
     this.art.destroy();
-    this.storeSub.unsubscibe();
+    // this.storeSub.unsubscibe();
   }
 }

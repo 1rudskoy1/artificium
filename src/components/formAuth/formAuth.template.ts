@@ -43,7 +43,6 @@ function opinionAuth() {
 }
 
 function authBackground(date:number = 1) {
-  console.log(date, 'Game');
   return `
   <img class="authorization-background__img" src="img/${date == 1 ? 'Illustration.png' : 'Illustration-auth.jpg' }" alt="background">
     ${date != 1 ? authBackgroundText() : ''}
