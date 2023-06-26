@@ -37,6 +37,9 @@ class Dom {
     containClass(className:string) {
       return this.$el.classList.contains(className);
     }
+    parent() {
+      return this.$el.parentNode;
+    }
 }
 export function $(selector:string) {
   return new Dom(selector);
