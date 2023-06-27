@@ -20,3 +20,10 @@ export function validationFilds(data: { email: string; password: string;}) {
   }
   return error;
 }
+
+export function clearActive(className:string, node:string) {
+  const actives = document.querySelector(node).querySelectorAll('.'+className);
+  actives.forEach((active)=> {
+    active.classList.remove(className);
+  });
+}

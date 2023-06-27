@@ -40,6 +40,9 @@ class Dom {
     parent() {
       return this.$el.parentNode;
     }
+    add(className:string) {
+      return this.$el.classList.add(className);
+    }
 }
 export function $(selector:string) {
   return new Dom(selector);

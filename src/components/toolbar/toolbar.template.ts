@@ -17,7 +17,7 @@ export function toolbarTemplate() {
                             <li class="menu-user-list__item "><img class="menu-user-list__icon"
                                     src="./img/credit-card.svg" alt=""> Billing</li>
                         </div>
-                        <div class="menu-user-list">
+                        <div class="menu-user-list" data-wrap="list-menu">
                             <h3 class="menu-user-list__header">PROJECTS</h3>
                             <li class="menu-user-list__item menu-user-list__item-active"><img
                                     class="menu-user-list__icon" src="./img/triangle.svg" alt=""> Orbital Oddysey</li>
