@@ -678,6 +678,7 @@ line-height: 24px;
     &-icon {
       display: flex;
       margin-left: 24px;
+      cursor: pointer;
       &__text {
         color: #686B6E;
         font-size: 14px;
@@ -714,6 +715,7 @@ line-height: 24px;
     text-align: center;
     max-width: 710px;
     margin: 0 auto;
+    display: none;
 
     &__header {
       margin-top: 35px;
@@ -724,6 +726,7 @@ line-height: 24px;
   &-options {
     display: flex;
     justify-content: space-around;
+    display: none;
   }
   &-option {
     display: flex;
@@ -805,4 +808,67 @@ line-height: 24px;
 
 .container:has(> .menu) {
   display: flex;
+}
+
+.send {
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    max-width: 1052px;
+    box-sizing: border-box;
+    height: 70vh;
+    place-content: flex-end;
+    overflow-y: scroll;
+  }
+
+  &-item {
+    border-radius: 16px;
+    border: 1px solid #1A1D21;
+    padding: 16px;
+    margin-top: 16px;
+    margin-right: 16px;
+  }
+
+  &-user {
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    &__logo {
+      width: 48px;
+      height: 48px;
+      margin-right: 25px;
+    }
+    &__name {
+      font-weight: 600;
+      line-height: 24px;
+      color: #FFF;
+      font-size: 16px;
+      margin-right: 16px;
+    }
+    &__time {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      color: #686B6E;
+    }
+    &__copy {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+  &-text {
+    color: #9B9C9E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    max-width: 948px;
+    margin-left: 75px;
+  }
 }
