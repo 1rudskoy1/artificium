@@ -43,6 +43,9 @@ class Dom {
     add(className:string) {
       return this.$el.classList.add(className);
     }
+    getValue() {
+      return this.$el.value;
+    }
 }
 export function $(selector:string) {
   return new Dom(selector);

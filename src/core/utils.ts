@@ -20,7 +20,18 @@ export function validationFilds(data: { email: string; password: string;}) {
   }
   return error;
 }
-
+export function createNewElement(tagName:string, className:string, attr = '', value = '') {
+  const tag = document.createElement(tagName);
+  tag.classList.add(className);
+  if (attr !== '') {
+    const attribute = attr.split('=');
+    tag.setAttribute(attribute[0], attribute[1]);
+  }
+  if (value !== '') {
+    tag.innerHTML = value;
+  }
+  return tag;
+}
 export function clearActive(className:string, node:string) {
   const actives = document.querySelector(node).querySelectorAll('.'+className);
   actives.forEach((active)=> {

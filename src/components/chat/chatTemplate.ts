@@ -2,8 +2,8 @@ function chatTop() {
   return `
   <div class="chat-top">
         <div class="chat-top-name">
-            <h2 class="chat-top-name__header">Orbital Oddysey</h2>
-            <span class="chat-top-name__text">Marketing Campaign for a new TV series Launch</span>
+            <h2 class="chat-top-name__header" data-edit="header">Orbital Oddysey</h2>
+            <span class="chat-top-name__text" data-edit="text">Marketing Campaign for a new TV series Launch</span>
         </div>
         <div class="chat-top">
             <div class="access-users access-users-chat">
@@ -25,7 +25,7 @@ function chatTop() {
                 <img class="chat-top-icon__share" src="./img/share.svg" alt="">
                 <span class="chat-top-icon__text">Share</span>
             </div>
-            <div class="chat-top-icon">
+            <div class="chat-top-icon" data-action="edit-chat-name">
                 <img class="chat-top-icon__edit" src="./img/edit.svg" alt="">
             </div>
         </div>
@@ -60,7 +60,7 @@ function chatInput() {
   <div class="chat-input">
     <img class="chat-input__icon" src="./img/micro.svg" alt="">
     <input type="text" class="chat-input__send"
-        placeholder="You can ask me anything! I am here to help.">
+        placeholder="You can ask me anything! I am here to help." data-action="input-chat">
     <div class="chat-input-icons">
         <img class="chat-input__icon" src="./img/telegram.svg" alt="">
         <img class="chat-input__icon chat-top-icon__edit" src="./img/pin.svg" alt="">
@@ -85,61 +85,17 @@ export function chatTemplate() {
                         </div>
                     </div>
                     <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
-                </div> 
-                <div class= "send-item">
-                    <div class="send-user">
-                        <div class = "send-user-wrap"> 
-                            <img class = "send-user__logo" src="./img/Avatar-1.png"/>
-                            <div class = "send-user__name">Ryan Lee</div>
-                            <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
-                        </div>
-                    </div>
-                    <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
                 </div>
                 <div class= "send-item">
                     <div class="send-user">
                         <div class = "send-user-wrap"> 
-                            <img class = "send-user__logo" src="./img/Avatar-1.png"/>
-                            <div class = "send-user__name">Ryan Lee</div>
+                            <img class = "send-user__logo" src="./img/Avatar-2.png"/>
+                            <div class = "send-user__name">Isabella Chen</div>
                             <span class = "send-user__time">just now </span>
                             <img class = "send-user__copy" src="./img/copy-icon.svg"/>
                         </div>
                     </div>
-                    <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
-                </div>
-                <div class= "send-item">
-                    <div class="send-user">
-                        <div class = "send-user-wrap"> 
-                            <img class = "send-user__logo" src="./img/Avatar-1.png"/>
-                            <div class = "send-user__name">Ryan Lee</div>
-                            <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
-                        </div>
-                    </div>
-                    <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
-                </div>
-                <div class= "send-item">
-                    <div class="send-user">
-                        <div class = "send-user-wrap"> 
-                            <img class = "send-user__logo" src="./img/Avatar-1.png"/>
-                            <div class = "send-user__name">Ryan Lee</div>
-                            <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
-                        </div>
-                    </div>
-                    <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
-                </div>
-                <div class= "send-item">
-                    <div class="send-user">
-                        <div class = "send-user-wrap"> 
-                            <img class = "send-user__logo" src="./img/Avatar-1.png"/>
-                            <div class = "send-user__name">Ryan Lee</div>
-                            <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
-                        </div>
-                    </div>
-                    <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
+                    <div class="send-text">Good point! Let's see... How about these names</div> 
                 </div>
             </div> 
             <div class="chat-offer">
