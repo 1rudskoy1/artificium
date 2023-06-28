@@ -1,3 +1,15 @@
+import {data} from './../../redux/data';
+function toolbarProjects() {
+  const projects:any = data.projects;
+  let htmlProjects:string = '';
+  for (const key in projects) {
+    if (key !== undefined) {
+      htmlProjects += `<li class="menu-user-list__item"><img
+    class="menu-user-list__icon" src="${projects[key].logo}" alt=""> ${key}</li>`;
+    }
+  }
+  return htmlProjects;
+}
 export function toolbarTemplate() {
   return `
                     <div class="menu-user">
@@ -19,14 +31,7 @@ export function toolbarTemplate() {
                         </div>
                         <div class="menu-user-list" data-wrap="list-menu">
                             <h3 class="menu-user-list__header">PROJECTS</h3>
-                            <li class="menu-user-list__item menu-user-list__item-active"><img
-                                    class="menu-user-list__icon" src="./img/triangle.svg" alt=""> Orbital Oddysey</li>
-                            <li class="menu-user-list__item "><img class="menu-user-list__icon" src="./img/square.svg"
-                                    alt=""> Digital Product Launch</li>
-                            <li class="menu-user-list__item"><img class="menu-user-list__icon" src="./img/square-1.svg"
-                                    alt=""> Brand Refresh</li>
-                            <li class="menu-user-list__item"><img class="menu-user-list__icon" src="./img/octagon.svg"
-                                    alt=""> Social Media Strategy</li>
+                            ${toolbarProjects()}
                             <li class="menu-user-list__item menu-user-list__item_add"><img
                                     class="menu-user-list__icon menu-user-list__icon_add" src="./img/plus-circle.svg"
                                     alt=""> Add new project</li>

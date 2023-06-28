@@ -1,3 +1,4 @@
+import {data} from './../../redux/data';
 function chatTop() {
   return `
   <div class="chat-top">
@@ -32,27 +33,19 @@ function chatTop() {
     </div>
   `;
 }
-
 function chatTopTwo() {
-  return `
-  <div class="chat-top chat-top-two">
-    <div class="chat-top-items">
-        <div class="chat-top-item chat-top-item-active">
-            <img class="chat-icon" src="./img/artificium.svg" alt="">
-            <h5 class="chat-top-item__head">Artificium</h5>
-        </div>
-        <div class="chat-top-item">
-            <img class="chat-icon" src="./img/comment-circle.svg" alt="">
-            <h5 class="chat-top-item__head">Chat</h5>
-        </div>
-        <div class="chat-top-item">
-            <img class="chat-icon" src="./img/folder.svg" alt="">
-            <h5 class="chat-top-item__head">Library</h5>
-        </div>
-    </div>
-  </div>
-  
-  `;
+  let projects:any = data.projects;
+  projects = projects['Orbital Oddysey'].category;
+  let htmlCategory:string = '<div class="chat-top chat-top-two"> <div class="chat-top-items">';
+  for (const key in projects) {
+    if (key !== undefined) {
+      htmlCategory += `<div class="chat-top-item ${key == '0' ? 'chat-top-item-active': ''}">
+        <img class="chat-icon" src="${projects[key].logo}" alt="">
+        <h5 class="chat-top-item__head">${projects[key].name}</h5>
+    </div>`;
+    }
+  }
+  return htmlCategory + '</div></div>';
 }
 
 function chatInput() {
