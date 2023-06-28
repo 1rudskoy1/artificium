@@ -2,10 +2,12 @@ import {data} from './../../redux/data';
 function toolbarProjects() {
   const projects:any = data.projects;
   let htmlProjects:string = '';
+  let index = 1;
   for (const key in projects) {
     if (key !== undefined) {
-      htmlProjects += `<li class="menu-user-list__item"><img
+      htmlProjects += `<li class="menu-user-list__item ${index === 1 ? 'menu-user-list__item-active' : ''}" data-project="${index}"><img
     class="menu-user-list__icon" src="${projects[key].logo}" alt=""> ${key}</li>`;
+      index++;
     }
   }
   return htmlProjects;

@@ -827,13 +827,18 @@ line-height: 24px;
 .send {
 
   &-items {
-    display: flex;
-    flex-direction: column-reverse;
     max-width: 1052px;
     box-sizing: border-box;
     height: 70vh;
     overflow-y: scroll;
-
+    grid-template-columns: 100%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: 1fr;
+    
+    &::before {
+      content: "";
+    }
     &::-webkit-scrollbar {
       width: 1px;
     }
@@ -851,6 +856,7 @@ line-height: 24px;
     padding: 16px;
     margin-top: 16px;
     margin-right: 16px;
+    height: fit-content;
   }
 
   &-user {

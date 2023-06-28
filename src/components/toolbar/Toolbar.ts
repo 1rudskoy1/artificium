@@ -26,7 +26,7 @@ export class Toolbar extends ArtComponent {
           return false;
         }
       }
-      if ($($target.parent()).getAtrr('data-wrap')) {
+      if ($($target.parent()).getAtrr('data-wrap') && $target.getAtrr('data-project')) {
         clearActive('menu-user-list__item-active', '[data-wrap="list-menu"]');
         $target.add('menu-user-list__item-active');
       }

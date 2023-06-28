@@ -22,6 +22,5 @@ export class ChatPage extends Page {
   }
   destroy() {
     this.art.destroy();
-    this.storeSub.unsubscibe();
   }
 }

@@ -69,6 +69,7 @@ export class Chat extends ArtComponent {
           sendUser.append(text);
 
           document.querySelector('.send-items').append(sendItem);
+          input.$el.value = '';
         }
       }
     }
