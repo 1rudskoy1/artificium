@@ -43,6 +43,9 @@ class Dom {
     add(className:string) {
       return this.$el.classList.add(className);
     }
+    remove(className:string) {
+      return this.$el.classList.remove(className);
+    }
     getValue() {
       return this.$el.value;
     }

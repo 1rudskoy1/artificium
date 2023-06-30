@@ -24,6 +24,16 @@ export class Chat extends ArtComponent {
         document.querySelector('.chat-top-item-active').classList.remove('chat-top-item-active');
         parent.$el.classList.add('chat-top-item-active');
       }
+      if($(e.target).getAtrr('data-action') === 'copy') {
+        const text = $(parent.parent()).parent().querySelector('.send-text').innerHTML;
+        navigator.clipboard.writeText(text).then(() => {
+          const warm = $("[data-action='warm-text']");
+          warm.add('warm-text-animated');
+          setTimeout(() => {
+            warm.remove('warm-text-animated')
+          }, 500);
+        });
+      }
     }
     onDblclick(e:any) {
       const $target = $(e.target);

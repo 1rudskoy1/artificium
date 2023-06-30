@@ -11,6 +11,7 @@ a {
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.15px;
+  overflow: hidden;
 }
 ::placeholder {
   color: #9B9C9E;
@@ -899,5 +900,33 @@ line-height: 24px;
     line-height: 24px;
     max-width: 948px;
     margin-left: 75px;
+  }
+}
+.warm-text {
+  width: 100%;
+  max-width: 300px;
+  color: white;
+  background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.5) 0%, rgba(204, 235, 235, 0) 100%));
+  border-radius: 16px;
+  text-align: center;
+  padding: 12px 0;
+  position: absolute;
+  right: 3%;
+  bottom: -110px;
+  opacity: 0;
+
+  &-animated {
+    animation: 0.5s fadeIn;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    bottom: 0px;
+    opacity: .1;
+  }
+  to {
+    bottom: 50px;
+    opacity: 1;
   }
 }

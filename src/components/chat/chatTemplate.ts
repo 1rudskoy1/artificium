@@ -74,7 +74,7 @@ export function chatTemplate() {
                             <img class = "send-user__logo" src="./img/Avatar-1.png"/>
                             <div class = "send-user__name">Ryan Lee</div>
                             <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
+                            <img class = "send-user__copy" src="./img/copy-icon.svg" data-action = "copy"/>
                         </div>
                     </div>
                     <div class="send-text"> Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔</div> 
@@ -85,7 +85,7 @@ export function chatTemplate() {
                             <img class = "send-user__logo" src="./img/Avatar-2.png"/>
                             <div class = "send-user__name">Isabella Chen</div>
                             <span class = "send-user__time">just now </span>
-                            <img class = "send-user__copy" src="./img/copy-icon.svg"/>
+                            <img class = "send-user__copy" src="./img/copy-icon.svg" data-action = "copy"/>
                         </div>
                     </div>
                     <div class="send-text">Good point! Let's see... How about these names</div> 
@@ -174,6 +174,6 @@ export function chatTemplate() {
             </div>
             ${chatInput()}
         </div>
-  
+        <div class = "warm-text" data-action='warm-text'> Coped text</div>
   `;
 }

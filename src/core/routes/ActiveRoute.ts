@@ -3,6 +3,6 @@ export class ActiveRoute {
     return window.location.hash.slice(1);
   }
   static get param() {
-    return ActiveRoute.path.split('?')[1].split('=')[1];
+    return ActiveRoute.path.split('/')[1];
   }
 }
