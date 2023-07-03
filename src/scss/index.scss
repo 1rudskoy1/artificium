@@ -925,14 +925,34 @@ line-height: 24px;
 .wrap-images{
   display: flex;
   justify-content: flex-start;
-  max-height: 200px;
-  margin-top: 25px;
   margin: 0 auto;
   padding-left: 75px;
   margin-top: 15px;
+  gap: 15px;
+  flex-wrap: wrap;
   &__img {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+.preview-imgs {
+  position: absolute;
+  width: 100%;
+  top: -40px;
+  left: 0;
+  height: 36px;
+  &__img {
+    margin-right: 10px;
+    width: 65px;
+    opacity: .9;
+  }
+}
+.manage {
+
+  &-edit {
+    position: absolute;
+    display: none;
   }
 }
 @keyframes fadeIn {

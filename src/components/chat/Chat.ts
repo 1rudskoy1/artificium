@@ -4,7 +4,7 @@ import {$} from '../../core/Dom';
 import {createNewElement} from '../../core/utils';
 export class Chat extends ArtComponent {
     static className = 'chat';
-    blah: any;
+    blah: HTMLElement[];
     constructor($root:any, options:any) {
       super($root, {
         name: 'Chat',
@@ -35,27 +35,36 @@ export class Chat extends ArtComponent {
           }, 500);
         });
       }
+      if($($(e.target).parent()).getAtrr('data-action') === 'edit-chat-name') {
+        console.log('edit');
+      }
       if($(e.target).getAtrr('data-action') === 'file-send') {
         const fileInpute = (document.querySelector('#chat-input')  as HTMLInputElement);
+        const wrapImages = (document.querySelector('.preview-imgs') as HTMLInputElement);
         fileInpute.click();
         fileInpute.onchange = evt => {
-          const file = fileInpute.files[0];
-          if (file) {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.addEventListener('load', () => {
-              this.blah = createNewElement('img', 'wrap-images__img', `src=${reader.result}`);
-          });
+          const files = fileInpute.files;
+          if (files) {
+            let htmls: any[];
+            htmls = [];
+            for(let i = 0; files.length > i; i++) {
+              const reader = new FileReader();
+              reader.readAsDataURL(files[i]);
+              reader.addEventListener('load', () => {
+                htmls.push(createNewElement('img', 'wrap-images__img', `src=${reader.result}`));
+                wrapImages.append(createNewElement('img', 'preview-imgs__img', `src=${reader.result}`));
+                this.blah = htmls;
+            });
+            }
+              
           }
         }
-        console.log(fileInpute.files);
       }
     }
     onDblclick(e:any) {
       const $target = $(e.target);
       if ($target.getAtrr('data-edit')) {
         const target = $(`.chat-top-name__${$target.getAtrr('data-edit')}`);
-        console.log(target);
         const input = createNewElement('input', `chat-top-name__${$target.getAtrr('data-edit')}`, '');
         
         input.classList.add(`chat-top-name__${$target.getAtrr('data-edit')}_input`);
@@ -74,6 +83,7 @@ export class Chat extends ArtComponent {
     }
     onKeyup(e:any) {
       const input = $(e.target);
+      const wrapPrev = (document.querySelector('.preview-imgs') as HTMLInputElement);
       e = window.event;
       if (input.getAtrr('data-action') == 'input-chat') {
         if (e.code == 'Enter' && input.getValue() !== '') {
@@ -85,6 +95,7 @@ export class Chat extends ArtComponent {
           const name = createNewElement('div', 'send-user__name', '', 'Ryan Lee');
           const time = createNewElement('span', 'send-user__time', '', 'just now');
           const copyImg = createNewElement('img', 'send-user__copy', 'src=./img/copy-icon.svg');
+          copyImg.setAttribute('data-action', 'copy');
           const text = createNewElement('div', 'send-text', '', input.getValue());
           sendItem.append(sendUser);
           sendItemFlex.append(logo);
@@ -93,13 +104,17 @@ export class Chat extends ArtComponent {
           sendItemFlex.append(copyImg);
           sendUser.append(sendItemFlex);
           sendUser.append(text);
+
           if(this.blah) {
             wrapImages = createNewElement('div', 'wrap-images', '');
-            wrapImages.append(this.blah);
+            for(let i = 0; this.blah.length > i; i++) {
+              wrapImages.append(this.blah[i]);
+            }
             sendItem.append(wrapImages);
           }
           document.querySelector('.send-items').append(sendItem);
           input.$el.value = '';
+          wrapPrev.innerHTML ='';
         }
       }
     }

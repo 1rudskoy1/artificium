@@ -34,7 +34,7 @@ export function toolbarTemplate() {
                         <div class="menu-user-list" data-wrap="list-menu">
                             <h3 class="menu-user-list__header">PROJECTS</h3>
                             ${toolbarProjects()}
-                            <li class="menu-user-list__item menu-user-list__item_add"><img
+                            <li class="menu-user-list__item menu-user-list__item_add" data-action="add-projects"><img
                                     class="menu-user-list__icon menu-user-list__icon_add" src="./img/plus-circle.svg"
                                     alt=""> Add new project</li>
                         </div>

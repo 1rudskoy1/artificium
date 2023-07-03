@@ -30,5 +30,8 @@ export class Toolbar extends ArtComponent {
         clearActive('menu-user-list__item-active', '[data-wrap="list-menu"]');
         $target.add('menu-user-list__item-active');
       }
+      if ($target.getAtrr('data-action') == 'add-projects') {
+        console.log('action ');
+      }
     }
 }
