@@ -4,9 +4,10 @@ import {$} from '../../core/Dom';
 import {createNewElement} from '../../core/utils';
 export class Chat extends ArtComponent {
     static className = 'chat';
+    blah: any;
     constructor($root:any, options:any) {
       super($root, {
-        name: 'Toolbar',
+        name: 'Chat',
         listeners: ['click', 'keyup', 'dblclick'],
         ...options,
       });
@@ -33,6 +34,21 @@ export class Chat extends ArtComponent {
             warm.remove('warm-text-animated')
           }, 500);
         });
+      }
+      if($(e.target).getAtrr('data-action') === 'file-send') {
+        const fileInpute = (document.querySelector('#chat-input')  as HTMLInputElement);
+        fileInpute.click();
+        fileInpute.onchange = evt => {
+          const file = fileInpute.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.addEventListener('load', () => {
+              this.blah = createNewElement('img', 'wrap-images__img', `src=${reader.result}`);
+          });
+          }
+        }
+        console.log(fileInpute.files);
       }
     }
     onDblclick(e:any) {
@@ -61,6 +77,7 @@ export class Chat extends ArtComponent {
       e = window.event;
       if (input.getAtrr('data-action') == 'input-chat') {
         if (e.code == 'Enter' && input.getValue() !== '') {
+          let wrapImages;
           const sendItem = createNewElement('div', 'send-item', '');
           const sendItemFlex = createNewElement('div', 'send-user-wrap', '');
           const sendUser = createNewElement('div', 'send-user', '');
@@ -69,7 +86,6 @@ export class Chat extends ArtComponent {
           const time = createNewElement('span', 'send-user__time', '', 'just now');
           const copyImg = createNewElement('img', 'send-user__copy', 'src=./img/copy-icon.svg');
           const text = createNewElement('div', 'send-text', '', input.getValue());
-
           sendItem.append(sendUser);
           sendItemFlex.append(logo);
           sendItemFlex.append(name);
@@ -77,7 +93,11 @@ export class Chat extends ArtComponent {
           sendItemFlex.append(copyImg);
           sendUser.append(sendItemFlex);
           sendUser.append(text);
-
+          if(this.blah) {
+            wrapImages = createNewElement('div', 'wrap-images', '');
+            wrapImages.append(this.blah);
+            sendItem.append(wrapImages);
+          }
           document.querySelector('.send-items').append(sendItem);
           input.$el.value = '';
         }

@@ -55,7 +55,8 @@ function chatInput() {
     <input type="text" class="chat-input__send"
         placeholder="You can ask me anything! I am here to help." data-action="input-chat">
     <div class="chat-input-icons">
-        <img class="chat-input__icon" src="./img/telegram.svg" alt="">
+        <input type="file" style="display:none" id="chat-input">
+        <img class="chat-input__icon" src="./img/telegram.svg" alt="" data-action= "file-send">
         <img class="chat-input__icon chat-top-icon__edit" src="./img/pin.svg" alt="">
     </div>
 </div>
