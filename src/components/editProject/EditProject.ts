@@ -16,8 +16,15 @@ export class EditProject extends ArtComponent {
     }
     init() {
       super.init();
+      const edit = document.querySelector<HTMLElement>('.manage-edit');
+      this.emitter.subscribe('edit-open', (data:any) => {
+        edit.style.display = 'block';
+      });
     }
-    onClick() {
-
+    onClick(e:any) {
+      if (e.target.classList.contains('blur')) {
+        const edit = document.querySelector<HTMLElement>('.manage-edit')
+        edit.style.display = 'none';
+      }
     }
 }

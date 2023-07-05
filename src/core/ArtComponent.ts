@@ -3,9 +3,11 @@ export class ArtComponent extends DomListener {
   name:any;
   storeSub:any;
   unsubscribers:any;
+  emitter:any;
   constructor($root:Object, options:any) {
     super($root, options.listeners);
     this.name = options.name || '';
+    this.emitter = options.emitter;
     this.prepare();
   }
   prepare() {

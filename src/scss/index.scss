@@ -954,6 +954,206 @@ line-height: 24px;
     position: absolute;
     display: none;
   }
+  &-users {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  &-user {
+    display: flex;
+    justify-content: space-between;
+
+    &__btn {
+      border-radius: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%);
+      height: 32px;
+      padding: 7px 10px 12px 10px;
+      box-sizing: border-box;
+      color: #82DBF7;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.15px;
+    }
+  }
+}
+.manage {
+
+  &-edit {
+    transform: translateX(50%);
+    margin-top: 50px;
+    width: 720px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(26, 29, 33, 0.96);
+    box-shadow: 0px 8px 12px 0px rgba(255, 255, 255, 0.04) inset, 0px 24px 64px -16px rgba(0, 0, 0, 0.24), 16px 24px 64px -24px rgba(255, 255, 255, 0.04) inset;
+  }
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    &__header {
+      font-size: 24px;
+      color: white;
+      font-weight: 600;
+      line-height: 32px;
+    }
+    &__close {
+
+    }
+    &__text {
+      font-weight: 500;
+      line-height: 24px;
+      color: #9B9C9E;
+      font-size: 16px;
+      letter-spacing: 0.15px;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+  }
+}
+.blur {
+  position: absolute;
+  left: -50%;
+  top: -49px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(6, 7, 8, 0.64);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+.manage {
+
+  &-invates {
+    display: flex;
+    justify-content: space-between;
+
+    &__btn {
+      max-width: 148px;
+    }
+  }
+}
+.invates {
+  &-field{
+    display: flex;
+    border-radius: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(26, 29, 33, 0.96);
+    width: 70%;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 8px 12px 0px rgba(255, 255, 255, 0.04) inset, 0px 24px 64px -16px rgba(0, 0, 0, 0.24), 16px 24px 64px -24px rgba(255, 255, 255, 0.04) inset;
+  }
+}
+.invates {
+  &-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%);
+    &__logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+}
+.setting {
+
+  &-privacy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131619;
+    border-radius: 12px;
+    height: 88px;
+    padding: 16px 24px;
+    box-sizing: border-box;
+
+  }
+  &-button {
+    border-radius: 12px;
+    background: #131619;
+    position: relative;
+    &::after {
+      content: "";
+      height: 88px;
+      position: absolute;
+      width: 2px;
+      top: -20px;
+      left: -26px;
+      background: rgba(26, 29, 33, 0.96);
+    }
+  }
+}
+.privacy {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  &__header {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #E8E9E9;
+    margin-left: 50px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: -33px;
+      top: -1px;
+      background-image: url(../img/Globe-02.svg);
+    }
+  }
+}
+.copy-button {
+  height: 32px;
+  padding: 8px 12px;
+  padding-left: 26px;
+  border-radius: 12px;
+  color: #9B9C9E;
+  background: linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%);
+  box-shadow: 0px 8px 12px 0px rgba(255, 255, 255, 0.08) inset, 0px 24px 24px -16px rgba(0, 0, 0, 0.12), 16px 24px 64px -24px rgba(255, 255, 255, 0.08) inset;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.15px;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/Link.svg);
+    left: 5px;
+    top: 15px;
+  }
+}
+.dropdown {
+  &-toggle {
+    color:#B6F09C;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    margin-right: 25px;
+  }
+  &-menu {
+    display: none;
+  }
 }
 @keyframes fadeIn {
   from {

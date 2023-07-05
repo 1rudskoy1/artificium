@@ -35,9 +35,11 @@ export class Chat extends ArtComponent {
           }, 500);
         });
       }
+
       if($($(e.target).parent()).getAtrr('data-action') === 'edit-chat-name') {
-        console.log('edit');
+        this.emitter.emit('edit-open', '');
       }
+
       if($(e.target).getAtrr('data-action') === 'file-send') {
         const fileInpute = (document.querySelector('#chat-input')  as HTMLInputElement);
         const wrapImages = (document.querySelector('.preview-imgs') as HTMLInputElement);

@@ -1,5 +1,6 @@
 export function editProjectTemplate() {
   return `
+  <div class = "blur"></div>
   <div class="manage-top">
       <h3 class="manage-top__header">Manage who can view this project</h3>
       <img class="manage-top__close" src="./img/close.svg" alt="">
@@ -44,8 +45,7 @@ export function editProjectTemplate() {
           <button class="manage-user__btn manage-user__btn_editor">Editor</button>
       </div>
       <li class="menu-user-list__item" data-action="add-projects"><img
-              class="menu-user-list__icon menu-user-list__icon_add" src="./img/plus-circle.svg" alt=""> Add new
-          project</li>
+              class="menu-user-list__icon menu-user-list__icon_add" src="./img/plus-circle.svg" alt=""> and 5 more others</li>
   </div>
   <div class="setting-privacy">
       <div class="privacy">
