@@ -12,11 +12,12 @@ export class Toolbar extends ArtComponent {
       });
     }
     prepare() {}
-    toHTML(date:any) {
+    toHTML() {
       return toolbarTemplate();
     }
     init() {
       super.init();
+      this.emitter.subscribe('add-proj', () => this.toHTML());
     }
     onClick(e:any) {
       let $target = $(e.target);
@@ -31,7 +32,7 @@ export class Toolbar extends ArtComponent {
         $target.add('menu-user-list__item-active');
       }
       if ($target.getAtrr('data-action') == 'add-projects') {
-        console.log('action ');
+        this.emitter.emit('add-open', '');
       }
     }
 }

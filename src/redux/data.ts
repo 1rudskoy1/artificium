@@ -1,4 +1,4 @@
-export const data:any = {
+export let data:any = {
   projects: {
     'Orbital Oddysey': {
       logo: './img/triangle.svg',

@@ -1,4 +1,5 @@
 import {ArtComponent} from '../../core/ArtComponent';
+import {$} from '../../core/Dom';
 import {editProjectTemplate} from './editProjectTemplate';
 
 export class EditProject extends ArtComponent {
@@ -22,8 +23,8 @@ export class EditProject extends ArtComponent {
       });
     }
     onClick(e:any) {
-      if (e.target.classList.contains('blur')) {
-        const edit = document.querySelector<HTMLElement>('.manage-edit')
+      if (e.target.classList.contains('blur') || $(e.target).getAtrr('data-role') == 'close') {
+        const edit = document.querySelector<HTMLElement>('.manage-edit');
         edit.style.display = 'none';
       }
     }

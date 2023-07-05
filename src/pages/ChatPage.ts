@@ -1,4 +1,5 @@
 import {Art} from '../components/Art/Art';
+import {AddProject} from '../components/addProject/AddProject';
 import {Chat} from '../components/chat/Chat';
 import {EditProject} from '../components/editProject/EditProject';
 import {Toolbar} from '../components/toolbar/Toolbar';
@@ -14,7 +15,7 @@ export class ChatPage extends Page {
   }
   getRoot() {
     this.art = new Art({
-      components: [Toolbar, Chat, EditProject],
+      components: [Toolbar, Chat, EditProject, AddProject],
     });
     return this.art.getRoot();
   }

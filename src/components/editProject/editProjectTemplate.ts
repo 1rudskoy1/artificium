@@ -3,7 +3,7 @@ export function editProjectTemplate() {
   <div class = "blur"></div>
   <div class="manage-top">
       <h3 class="manage-top__header">Manage who can view this project</h3>
-      <img class="manage-top__close" src="./img/close.svg" alt="">
+      <img class="manage-top__close" src="./img/close.svg" alt="" data-role = "close">
   </div>
   <div class="manage-top__text">
       Select which users can access and view this project. Only users with access can view and edit the project.
