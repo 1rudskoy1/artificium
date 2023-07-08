@@ -513,7 +513,9 @@ line-height: 24px;
       flex-direction: column;
 
       &__icon {
-
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
         &_add {
           height: 20px;
         }
@@ -1032,7 +1034,28 @@ line-height: 24px;
     display: flex;
     justify-content: space-between;
     position: relative;
-
+    &-img{
+      position: relative;
+      &__img {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 0px;
+      }
+      &__click {
+        width: 80px;
+        height: 80px;
+        color: white;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+        font-size: 25px;
+        padding-top: 19px;
+        box-sizing: border-box;
+        background: linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0) 100%);
+        margin-bottom: 25px;
+      }
+    }
     &-add {
       margin-bottom: 25px;
     }

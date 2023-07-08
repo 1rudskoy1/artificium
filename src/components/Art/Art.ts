@@ -28,7 +28,7 @@ export class Art {
     });
   }
   destroy() {
-    // this.subscriber.unsubscribeFromStore();
+    this.subscriber.unsubscribeFromStore();
     this.components.forEach((component:any) => component.destroy());
   }
 }

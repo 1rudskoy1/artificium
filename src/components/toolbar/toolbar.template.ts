@@ -5,7 +5,7 @@ function toolbarProjects() {
   let index = 1;
   for (const key in projects) {
     if (key !== undefined) {
-      htmlProjects += `<li class="menu-user-list__item ${index === 1 ? 'menu-user-list__item-active' : ''}" data-project="${index}"><img
+      htmlProjects += `<li class="menu-user-list__item ${index === 1 ? 'menu-user-list__item-active' : ''}" data-project="${key}"><img
       class="menu-user-list__icon" src="${projects[key].logo}" alt=""> ${key}</li>`;
       index++;
     }

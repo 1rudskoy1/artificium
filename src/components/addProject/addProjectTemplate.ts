@@ -11,6 +11,10 @@ export function addProjectTemplate() {
         </div>
         <button class="btn manage-invates__btn" data-role="add-project">Create</button>
     </div>
+    <div class="manage-invates-img">
+        <input style="display:none" class="manage-invates-img__input" type= "file" accept="image/png, image/gif, image/jpeg" data-role="privateProjectImg"/>
+        <div class="manage-invates-img__click" data-role="projectImgPrev">+</div>
+    </div>
     <div class="setting-privacy">
         <div class="privacy">
             <h4 class="privacy__header">Anyone with the link</h4>

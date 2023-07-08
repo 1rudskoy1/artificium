@@ -2,9 +2,11 @@ import {ArtComponent} from '../../core/ArtComponent';
 import {chatTemplate} from './chatTemplate';
 import {$} from '../../core/Dom';
 import {createNewElement} from '../../core/utils';
+import {data} from '../../redux/data';
 export class Chat extends ArtComponent {
     static className = 'chat';
     blah: HTMLElement[];
+    currentChat: string
     constructor($root:any, options:any) {
       super($root, {
         name: 'Chat',
@@ -13,11 +15,15 @@ export class Chat extends ArtComponent {
       });
     }
     prepare() {}
-    toHTML(date:any) {
-      return chatTemplate();
+    toHTML(date:string) {
+      return chatTemplate(date);
     }
     init() {
       super.init();
+      this.emitter.subscribe('switch-chat', (data:string) => {
+        this.currentChat = data;
+        this.$root.html(this.toHTML(data));
+      });
     }
     onClick(e:any) {
       const parent = $($(e.target).parent());
@@ -115,8 +121,14 @@ export class Chat extends ArtComponent {
             sendItem.append(wrapImages);
           }
           document.querySelector('.send-items').append(sendItem);
+          // let now = new Date;
+          // const cur = Object.keys(data.projects)[0];
+          // data.projects[this.currentChat || cur].category[0].chat.Iuser.push({time:now, content: input.$el.value, images: this.blah, dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}});
           input.$el.value = '';
           wrapPrev.innerHTML ='';
+          // console.log(data.projects[this.currentChat || cur].category[1].chat.Iuser);
+          // console.log(data.projects);
+          // this.$root.html(this.toHTML(this.currentChat || cur));
         }
       }
     }
