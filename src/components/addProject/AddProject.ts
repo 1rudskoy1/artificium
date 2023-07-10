@@ -26,8 +26,8 @@ export class AddProject extends ArtComponent {
       });
     }
     onClick(e:any) {
+      const edit = document.querySelector<HTMLElement>('.manage-add');
       if (e.target.classList.contains('blur') || $(e.target).getAtrr('data-role') == 'close') {
-        const edit = document.querySelector<HTMLElement>('.manage-add');
         edit.style.display = 'none';
       }
       if ($(e.target).getAtrr('data-role') == 'projectImgPrev') {
@@ -56,6 +56,7 @@ export class AddProject extends ArtComponent {
           };
           data.projects[value] = proj;
           this.emitter.emit('add-proj', proj);
+          edit.style.display = 'none';
         }
       }
     }

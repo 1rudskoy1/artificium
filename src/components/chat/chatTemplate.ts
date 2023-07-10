@@ -68,32 +68,36 @@ function chatInput() {
   `;
 }
 function messages(title:string ='Orbital Oddysey', category:number = 0) {
-  let chat:any = data.projects[title].category[category].chat.Iuser;
-  let output = [];
-  for (let key in chat) {
-    if (key) {
-      output.push(chat[key]);
+  if (data.projects[title].category.length) {
+    let chat:any = data.projects[title]?.category[category].chat.Iuser;
+    let output = [];
+    for (let key in chat) {
+      if (key) {
+        output.push(chat[key]);
+      }
     }
-  }
-  output.sort(function(a, b) {
-    return (a.time - b.time);
-  });
-  const html = output.map((item)=> {
-    return `
-    <div class= "send-item">
-        <div class="send-user">
-            <div class = "send-user-wrap"> 
-                <img class = "send-user__logo" src="${item.dateUser.logo}"/>
-                <div class = "send-user__name">${item.dateUser.name}</div>
-                <span class = "send-user__time">${timeFormat(false, item.time)}</span>
-                <img class = "send-user__copy" src="./img/copy-icon.svg" data-action = "copy"/>
+    output.sort(function(a, b) {
+      return (a.time - b.time);
+    });
+    const html = output.map((item)=> {
+      return `
+        <div class= "send-item">
+            <div class="send-user">
+                <div class = "send-user-wrap"> 
+                    <img class = "send-user__logo" src="${item.dateUser.logo}"/>
+                    <div class = "send-user__name">${item.dateUser.name}</div>
+                    <span class = "send-user__time">${timeFormat(false, item.time)}</span>
+                    <img class = "send-user__copy" src="./img/copy-icon.svg" data-action = "copy"/>
+                </div>
             </div>
+            <div class="send-text"> ${item.content}</div> 
         </div>
-        <div class="send-text"> ${item.content}</div> 
-    </div>
-    `;
-  }).join('');
-  return html;
+        `;
+    }).join('');
+    return html;
+  } else {
+    return '';
+  }
 }
 export function chatTemplate(data:string) {
   return `
