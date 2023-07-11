@@ -24,6 +24,9 @@ export class AddProject extends ArtComponent {
       this.emitter.subscribe('add-open', (data:any) => {
         add.style.display = 'block';
       });
+      this.emitter.subscribe('add-open:category', (data:any) => {
+        add.style.display = 'block';
+      });
     }
     onClick(e:any) {
       const edit = document.querySelector<HTMLElement>('.manage-add');

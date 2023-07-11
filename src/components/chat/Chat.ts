@@ -1,7 +1,7 @@
 import {ArtComponent} from '../../core/ArtComponent';
 import {chatTemplate} from './chatTemplate';
 import {$} from '../../core/Dom';
-import {createNewElement} from '../../core/utils';
+import {createNewElement, timeFormat} from '../../core/utils';
 import {data} from '../../redux/data';
 export class Chat extends ArtComponent {
     static className = 'chat';
@@ -45,6 +45,9 @@ export class Chat extends ArtComponent {
       if($($(e.target).parent()).getAtrr('data-action') === 'edit-chat-name') {
         this.emitter.emit('edit-open', '');
       }
+      // if($(e.target).getAtrr('data-action') === 'add-category') {
+      //   this.emitter.emit('add-open:category', '');
+      // }
 
       if($(e.target).getAtrr('data-action') === 'file-send') {
         const fileInpute = (document.querySelector('#chat-input')  as HTMLInputElement);
@@ -92,6 +95,8 @@ export class Chat extends ArtComponent {
     onKeyup(e:any) {
       const input = $(e.target);
       const wrapPrev = (document.querySelector('.preview-imgs') as HTMLInputElement);
+      let now:any = new Date;
+      now = now.getTime();
       e = window.event;
       if (input.getAtrr('data-action') == 'input-chat') {
         if (e.code == 'Enter' && input.getValue() !== '') {
@@ -101,7 +106,7 @@ export class Chat extends ArtComponent {
           const sendUser = createNewElement('div', 'send-user', '');
           const logo = createNewElement('img', 'send-user__logo', 'src=./img/Avatar-1.png');
           const name = createNewElement('div', 'send-user__name', '', 'Ryan Lee');
-          const time = createNewElement('span', 'send-user__time', '', 'just now');
+          const time = createNewElement('span', 'send-user__time', '', timeFormat(false, now));
           const copyImg = createNewElement('img', 'send-user__copy', 'src=./img/copy-icon.svg');
           copyImg.setAttribute('data-action', 'copy');
           const text = createNewElement('div', 'send-text', '', input.getValue());
@@ -121,14 +126,10 @@ export class Chat extends ArtComponent {
             sendItem.append(wrapImages);
           }
           document.querySelector('.send-items').append(sendItem);
-          // let now = new Date;
-          // const cur = Object.keys(data.projects)[0];
-          // data.projects[this.currentChat || cur].category[0].chat.Iuser.push({time:now, content: input.$el.value, images: this.blah, dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}});
+          const cur = Object.keys(data.projects)[0];
+          data.projects[this.currentChat || cur].category[0].chat.Iuser.push({time:now, content: input.$el.value, images: this.blah, dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}});
           input.$el.value = '';
           wrapPrev.innerHTML ='';
-          // console.log(data.projects[this.currentChat || cur].category[1].chat.Iuser);
-          // console.log(data.projects);
-          // this.$root.html(this.toHTML(this.currentChat || cur));
         }
       }
     }

@@ -39,6 +39,11 @@ export function clearActive(className:string, node:string) {
   });
 }
 export function timeFormat(all = true, fixTime: null | number) {
+  const monthNames = [
+    'January', 'February', 'March',
+    'April', 'May', 'June',
+    'July', 'August', 'September',
+    'October', 'November', 'December'];
   const date = new Date(fixTime);
   let time;
   const year = date.getFullYear();
@@ -51,7 +56,7 @@ export function timeFormat(all = true, fixTime: null | number) {
   if (all) {
     time = `${year}:${mouth < 10 ? '0' + (mouth + 1) : mouth + 1}:${day < 10 ? '0' + day : day}:${hours < 10 ? '0' + hours : hours}:${minute < 10 ? '0' + minute : minute}:${seconds}:${miliseconds}`;
   } else {
-    time = `${day < 10 ? '0' + day : day}:${hours < 10 ? '0' + hours : hours}:${minute < 10 ? '0' + minute : minute}`;
+    time = `${day < 10 ? '0' + day : day} ${monthNames[mouth]}. ${hours < 10 ? '0' + hours : hours}:${minute < 10 ? '0' + minute : minute}`;
   }
   return time;
 }

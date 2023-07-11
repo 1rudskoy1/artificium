@@ -622,6 +622,17 @@ line-height: 24px;
     align-items: center;
     box-sizing: border-box;
     margin-bottom: 2px;
+    position: relative;
+
+    &__add {
+      position: absolute;
+      right: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      top: 25px;
+      color: #B6F09C;
+    }
 
     &:first-child {
       border-top-right-radius: 15px;

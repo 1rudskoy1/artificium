@@ -46,7 +46,7 @@ function chatTopTwo(title:string = 'Orbital Oddysey') {
     </div>`;
     }
   }
-  return htmlCategory + '</div></div>';
+  return htmlCategory + '</div><div class="chat-top__add" data-action="add-category">+</div></div>';
 }
 
 function chatInput() {
