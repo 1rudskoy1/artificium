@@ -4,6 +4,7 @@ import {$} from '../../core/Dom';
 import {createNewElement, timeFormat} from '../../core/utils';
 import {data} from '../../redux/data';
 export class Chat extends ArtComponent {
+
     static className = 'chat';
     blah: HTMLElement[];
     currentChat: string
@@ -133,4 +134,5 @@ export class Chat extends ArtComponent {
         }
       }
     }
+
 }

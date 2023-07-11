@@ -3,6 +3,7 @@ export let data:any = {
   projects: {
     'Orbital Oddysey': {
       logo: './img/triangle.svg',
+      preText: 'Marketing Campaign for a new TV series Launch',
       category: [{name: 'Artificium', logo: './img/artificium.svg',
         chat: {'Iuser':
         [{time: 1689094412804, images: '', content: 'Magomed', dateUser: {name: 'Uso Thenty', logo: './img/Avatar-3.png'}}, {time: 1689094412804, images: '', content: 'Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔', dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}}, {time: 1689094412804, images: '', content: 'Realy? 🤔', dateUser: {name: 'Uso Thenty', logo: './img/Avatar-3.png'}}]},
@@ -16,6 +17,7 @@ export let data:any = {
     },
     'Digital Product Launch': {
       logo: './img/square.svg',
+      preText: 'Digitl Prodation your home television wi-fi',
       category: [{name: 'Chat', logo: './img/comment-circle.svg',
         chat: {'Iuser':
         [{time: 1689094412804, images: '', content: 'Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔', dateUser: {name: 'Isabella Chen', logo: './img/Avatar-2.png'}}]},
@@ -23,6 +25,7 @@ export let data:any = {
     },
     'Brand Refresh': {
       logo: './img/square-1.svg',
+      preText: 'Refresh your brand for  two weeks',
       category: [{name: 'Закрытый', logo: './img/square-1.svg',
         chat: {'Iuser':
         [{time: 1689094412804, images: '', content: 'Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔', dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}}, {time: 1689094412804, images: '', content: 'Actually, I think I really like Cosmic Voyager. Maybe we could stick with that name and work on designing a more realistic concept art? 🤔', dateUser: {name: 'Inna Chan', logo: './img/Avatar-2.png'}}]},

@@ -1,11 +1,15 @@
 import {timeFormat} from '../../core/utils';
 import {data} from './../../redux/data';
-function chatTop() {
+function chatTop(title:any) {
+  let projects:any = data.projects;
+  if (!title) {
+    title = Object.keys(projects)[0];
+  }
   return `
   <div class="chat-top">
         <div class="chat-top-name">
-            <h2 class="chat-top-name__header" data-edit="header">Orbital Oddysey</h2>
-            <span class="chat-top-name__text" data-edit="text">Marketing Campaign for a new TV series Launch</span>
+            <h2 class="chat-top-name__header" data-edit="header">${title}</h2>
+            <span class="chat-top-name__text" data-edit="text">${projects[title] ? projects[title].preText : ''}</span>
         </div>
         <div class="chat-top">
             <div class="access-users access-users-chat">
@@ -101,7 +105,7 @@ function messages(title:string ='Orbital Oddysey', category:number = 0) {
 }
 export function chatTemplate(data:string) {
   return `
-  ${chatTop()}
+  ${chatTop(data)}
   ${chatTopTwo(data)}
         <div class="chat-fild">
         <div class ="send-items">
