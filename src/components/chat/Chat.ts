@@ -1,8 +1,10 @@
 import {ArtComponent} from '../../core/ArtComponent';
 import {chatTemplate} from './chatTemplate';
+import {chatTopTwo} from './chatTemplate';
 import {$} from '../../core/Dom';
 import {createNewElement, timeFormat} from '../../core/utils';
 import {data} from '../../redux/data';
+
 export class Chat extends ArtComponent {
 
     static className = 'chat';
@@ -25,6 +27,7 @@ export class Chat extends ArtComponent {
         this.currentChat = data;
         this.$root.html(this.toHTML(data));
       });
+      this.emitter.subscribe('add-category', () => chatTopTwo());
     }
     onClick(e:any) {
       const parent = $($(e.target).parent());
@@ -46,9 +49,9 @@ export class Chat extends ArtComponent {
       if($($(e.target).parent()).getAtrr('data-action') === 'edit-chat-name') {
         this.emitter.emit('edit-open', '');
       }
-      // if($(e.target).getAtrr('data-action') === 'add-category') {
-      //   this.emitter.emit('add-open:category', '');
-      // }
+      if($(e.target).getAtrr('data-action') === 'add-category') {
+        this.emitter.emit('add-open:category', '');
+      }
 
       if($(e.target).getAtrr('data-action') === 'file-send') {
         const fileInpute = (document.querySelector('#chat-input')  as HTMLInputElement);

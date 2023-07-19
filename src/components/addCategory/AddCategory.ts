@@ -1,32 +1,32 @@
 import {ArtComponent} from '../../core/ArtComponent';
 import {$} from '../../core/Dom';
-import {addProjectTemplate} from './addProjectTemplate';
+import {addCategoryTemplate} from './addCategoryTemplate';
 import {data} from '../../redux/data';
 import {createNewElement} from '../../core/utils';
 
-export class AddProject extends ArtComponent {
+export class AddCategory extends ArtComponent {
     static className = 'manage-add';
     addImg:string | ArrayBuffer;
     constructor($root:any, options:any) {
       super($root, {
-        name: 'add-project',
+        name: 'manage-top',
         listeners: ['click'],
         ...options,
       });
     }
     prepare() {}
     toHTML() {
-      return addProjectTemplate();
+      return addCategoryTemplate();
     }
     init() {
       super.init();
-      const add = document.querySelector<HTMLElement>('.manage-add');
-      this.emitter.subscribe('add-open', (data:any) => {
+      const add = <HTMLElement>(document.querySelector<HTMLElement>('[data-edit="window"]').parentNode);
+      this.emitter.subscribe('add-open:category', (data:any) => {
         add.style.display = 'block';
       });
     }
     onClick(e:any) {
-      const edit = document.querySelector<HTMLElement>('.manage-add');
+      const edit = <HTMLElement>(document.querySelector<HTMLElement>('[data-edit="window"]').parentNode);
       if (e.target.classList.contains('blur') || $(e.target).getAtrr('data-role') == 'close') {
         edit.style.display = 'none';
       }
@@ -40,21 +40,23 @@ export class AddProject extends ArtComponent {
               reader.readAsDataURL(file[0]);
               reader.addEventListener('load', () => {
                 e.target.innerHTML = '';
-                e.target.append(createNewElement('img', 'manage-invates-img__img', `src=${reader.result}`));
+                e.target.append(createNewElement('img', 'chat-icon', `src=${reader.result}`));
                 this.addImg = reader.result;
             });
           }
         };
       }
-      if ($(e.target).getAtrr('data-role') == 'add-project') {
-        const value:string = document.querySelector<HTMLInputElement>('[data-role = "add-input"]').value;
+      if ($(e.target).getAtrr('data-role') == 'add-category') {
+        const value:string = document.querySelector<HTMLInputElement>('[data-role = "add-input-category"]').value;
+        const header:string = document.querySelector<HTMLInputElement>('[data-edit="header"]').innerHTML;
+        console.log('value');
         if (value.length > 3) {
           const proj:{}= {
-            logo: this.addImg,
-            category: [],
+            name: value,
+            logo: `./img/${this.addImg}`,
           };
-          data.projects[value] = proj;
-          this.emitter.emit('add-proj', proj);
+          data.projects[header].category.push(proj);
+          this.emitter.emit('add-category', data);
           edit.style.display = 'none';
         }
       }

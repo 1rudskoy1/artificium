@@ -1,0 +1,39 @@
+export function addCategoryTemplate() {
+  return `
+    <div class = "blur"></div>
+    <div class="manage-top" data-edit="window">
+        <h3 class="manage-top__header">Add Category</h3>
+        <img class="manage-top__close" src="./img/close.svg" alt="" data-role = "close">
+    </div>
+    <div class="manage-invates manage-invates-add">
+        <div class="invates-field invates-field">
+           <input placeholder = "Name Category" class = "invates-field__input" data-role = "add-input-category"/>
+        </div>
+        <button class="btn manage-invates__btn" data-role="add-category">Create</button>
+    </div>
+    <div class="manage-invates-img">
+        <input style="display:none" class="manage-invates-img__input" type= "file" accept="image/png, image/gif, image/jpeg" data-role="privateProjectImg"/>
+        <div class="manage-invates-img__click" data-role="projectImgPrev">+</div>
+    </div>
+    <div class="setting-privacy">
+        <div class="privacy">
+            <h4 class="privacy__header">Anyone with the link</h4>
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button">
+                    can view
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">Action</a>
+                    <a class="dropdown-item">Another action</a>
+                    <a class="dropdown-item">Something else here</a>
+                </div>
+            </div>
+        </div>
+        <div class='setting-button'>
+            <button class="copy-button">
+                Copy Link
+            </button>
+        </div>
+    </div>
+    `;
+}

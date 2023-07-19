@@ -38,7 +38,7 @@ function chatTop(title:any) {
     </div>
   `;
 }
-function chatTopTwo(title:string = 'Orbital Oddysey') {
+export function chatTopTwo(title:string = 'Orbital Oddysey') {
   let projects:any = data.projects;
   projects = projects[title].category;
   let htmlCategory:string = '<div class="chat-top chat-top-two"> <div class="chat-top-items">';
@@ -65,7 +65,7 @@ function chatInput() {
     <div class="chat-input-icons">
         <input type="file" style="display:none" id="chat-input" accept="image/png, image/gif, image/jpeg" multiple>
         <img class="chat-input__icon" src="./img/telegram.svg" alt="" data-action= "file-send">
-        <img class="chat-input__icon chat-top-icon__edit" src="./img/pin.svg" alt="">
+        <img class="chat-input__icon chat-top-icon__edit" data-action = "send-message" src="./img/pin.svg" alt="">
     </div>
 </div>
   
